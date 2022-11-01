@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="block">
+        <form [formGroup]="login">
+            <h2>LOGIN</h2>
+            <input type="text" placeholder="Enter Email" class="input" formControlName= "email"/>
+            <input type="password" placeholder="Enter Password" class="input" formControlName= "password"/>
+            <div class="butt">
+                <button (click) ="loginSubmit(login.value)" [disabled]="login.invalid">Login</button>
+                <button (click) ="toRegister()">Register</button>
+                <button (click) ="toDash()">Return to Homepage</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div class="block">
+        <form [formGroup]="register">
+            <h2>REGISTER HERE!</h2>
+            <input type="text" placeholder="Enter First Name" class="input" formControlName= "firstname"/>
+            <input type="text" placeholder="Enter Last Name" class="input" formControlName= "lastname"/>
+            <input type="text" placeholder="Enter Username" class="input" formControlName= "username"/>
+            <input type="text" placeholder="Enter Email" class="input" formControlName= "email"/>
+            <input type="password" placeholder="Enter Password" class="input" formControlName= "password"/>
+          
+            <div class="butt">
+                <button (click) ="regSubmit(register.value)" [disabled]="register.invalid">Submit</button>
+                <button (click) ="toLogin()">LOGIN</button>
+                <button (click) ="toDash()">Return to Homepage</button>
+            </div>
+        </form>
+    </div>
+</div>
