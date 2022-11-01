@@ -19,21 +19,18 @@ export class RegisterComponent implements OnInit {
       username:['',Validators.required],
       email:['',Validators.compose([Validators.required,Validators.email])],
       password:['',Validators.required]
-      
     });
   }
   regSubmit(data:any){
-
     console.log(data);
-
-
   }
   toLogin(){
     this.router.navigate(['login']);
   }
-
   toDash(){
     this.router.navigate(['home']);
   }
-
+  toUser(){
+    this.router.navigate(['user']);
+  }
 }

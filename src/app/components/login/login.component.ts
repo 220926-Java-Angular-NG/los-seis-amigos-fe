@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit(data:any){
-
     console.log(data);
-
   }
 
   toRegister(){
@@ -31,5 +29,7 @@ export class LoginComponent implements OnInit {
   toDash(){
     this.router.navigate(['home']);
   }
-
+  toUser(){
+    this.router.navigate(['user']);
+  }
 }
