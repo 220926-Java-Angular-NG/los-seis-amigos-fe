@@ -18,13 +18,18 @@ export class RegisterComponent implements OnInit {
       lastname:['',Validators.required],
       username:['',Validators.required],
       email:['',Validators.compose([Validators.required,Validators.email])],
-      password:['',Validators.required]
+      password:['',Validators.required],
+      repassword:['',Validators.required]
       
     });
   }
   regSubmit(data:any){
 
-    console.log(data);
+    if (data.password == data.repassword) {
+      console.log(data);
+    } else {
+      alert("Please ensure passwords match.");
+    }
 
 
   }
@@ -37,3 +42,7 @@ export class RegisterComponent implements OnInit {
   }
 
 }
+function compose(arg0: (((control: import("@angular/forms").AbstractControl<any, any>) => import("@angular/forms").ValidationErrors | null) | ((pattern: string | RegExp) => import("@angular/forms").ValidatorFn))[]): any {
+  throw new Error('Function not implemented.');
+}
+

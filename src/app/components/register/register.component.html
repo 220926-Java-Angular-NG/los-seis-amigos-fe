@@ -7,6 +7,7 @@
             <input type="text" placeholder="Enter Username" class="input" formControlName= "username"/>
             <input type="text" placeholder="Enter Email" class="input" formControlName= "email"/>
             <input type="password" placeholder="Enter Password" class="input" formControlName= "password"/>
+            <input type="password" placeholder="Re-Enter Password" class="input" formControlName= "repassword"/>
           
             <div class="butt">
                 <button (click) ="regSubmit(register.value)" [disabled]="register.invalid">Submit</button>
