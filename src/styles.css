@@ -23,14 +23,17 @@ button:disabled{
     color: white;
     cursor: not-allowed;
 }
-.block{
+/* .block{
     width: 100%;
     background: linear-gradient(180deg, black, purple,gold);
     height: 100%;
     display: flex;
-}
+} */
 
 body {
     padding: 0;
     margin: 0;
+    width: 100%;
+    background: linear-gradient(180deg,gold,purple, black );
+    height: 100%;
 }
