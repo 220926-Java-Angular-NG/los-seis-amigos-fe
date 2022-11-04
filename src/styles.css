@@ -35,6 +35,8 @@ body {
     margin: 0;
     height: 100vh;
     background: linear-gradient(180deg,gold,purple, black );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 html {
