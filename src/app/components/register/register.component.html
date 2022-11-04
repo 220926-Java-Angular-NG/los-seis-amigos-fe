@@ -1,17 +1,18 @@
-<div class="wrapper">
-    <div class="block">
-        <form [formGroup]="register">
-            <h2>REGISTER HERE!</h2>
-            <input type="text" placeholder="Enter First Name" class="input" formControlName= "firstname"/>
-            <input type="text" placeholder="Enter Last Name" class="input" formControlName= "lastname"/>
-            <input type="text" placeholder="Enter Username" class="input" formControlName= "username"/>
-            <input type="text" placeholder="Enter Email" class="input" formControlName= "email"/>
-            <input type="password" placeholder="Enter Password" class="input" formControlName= "password"/>
+<div class="container h-100">
+    <div class="mx-auto h-100 d-flex align-items-center">
+        <form class="text-center mx-auto " [formGroup]="register">
+            <h2>REGISTER</h2>
+            <input type="text" placeholder="Enter First Name" class="form-control py-2 px-3 my-3" formControlName= "firstname"/>
+            <input type="text" placeholder="Enter Last Name" class="form-control py-2 px-3 my-3" formControlName= "lastname"/>
+            <input type="text" placeholder="Enter Username" class="form-control py-2 px-3 my-3" formControlName= "username"/>
+            <input type="text" placeholder="Enter Email" class="form-control py-2 px-3 my-3" formControlName= "email"/>
+            <input type="password" placeholder="Enter Password" class="form-control py-2 px-3 my-3" formControlName= "password"/>
           
-            <div class="butt">
-                <button (click) ="regSubmit(register.value)" [disabled]="register.invalid">Submit</button>
-                <button (click) ="toLogin()">LOGIN</button>
-                <button (click) ="toDash()">Return to Homepage</button>
+            <div class="row d-flex justify-content-center">
+                <button class="w-75 my-4 px-4 py-2 btn btn-info" (click) ="regSubmit(register.value)" [disabled]="register.invalid">Submit</button>
+                <hr class="" size="0" style="height:3px;border:none;color:white;background-color: white;">
+                <button class="w-75 my-2 px-4 py-2 btn btn-info" (click) ="toLogin()">LOGIN</button>
+                <button class="w-75 my-2 px-4 py-2 btn btn-info" (click) ="toDash()">Return to Homepage</button>
             </div>
         </form>
     </div>

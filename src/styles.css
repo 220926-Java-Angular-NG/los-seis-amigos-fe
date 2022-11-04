@@ -17,12 +17,10 @@
     width:100px;
     cursor:pointer;
 } */
-/* button:disabled{
-    background-color: gray;
-    opacity: 0.8;
-    color: white;
+button:disabled{
     cursor: not-allowed;
-} */
+    pointer-events: all !important;
+}
 /* .block{
     width: 100%;
     background: linear-gradient(180deg, black, purple,gold);
