@@ -13,6 +13,15 @@
                 <button (click) ="toLogin()">LOGIN</button>
                 <button (click) ="toDash()">Return to Homepage</button>
             </div>
+
+            <div *ngIf="showMsg" class="message">
+            <h2>Notice: {{displayMsg}}</h2>
+            </div>
         </form>
+
+        <br>
+
+        
+
     </div>
 </div>

@@ -24,3 +24,6 @@ h2{
     justify-content: center;
     text-shadow: 5px, black;
 }
+.message{
+    text-align: center;
+}
