@@ -1,9 +1,9 @@
 <!-- <div class="container row mx-auto d-flex justify-content-evenly "> -->
 
   <!-- START PRODUCT LISTING -->
-  <div class="card mb-3 mx-auto " style="width: 18.5rem;" *ngIf="pack">
+  <div class="card mb-3 mx-auto card-adjustment" style="width: 13rem;" *ngIf="pack">
     <div class="w-100 text-center mx-auto">
-      <img class="p-1 mx-auto" style="height: 30rem;" src="{{pack.imgSrc}}" alt="Card image cap">
+      <img class="p-1 mx-auto" style="height: 15rem;" src="{{pack.imgSrc}}" alt="Card image cap">
     </div>
     <div class=" p-2 mt-auto">
       <hr>
@@ -13,7 +13,25 @@
 
         <span class="card-text mr-auto fw-bold p-2">${{pack.price}} </span>
       </p>
-      <button (click)="addToCart()" class="w-100 btn btn-primary">Add To Cart</button>
+      <div class="row">
+        <div class="col-8">
+          <button (click)="updateQuantity(-1)" class="p-0 pt-1 m-0 btn btn-outline-primary">
+            <span aria-hidden="true">
+              <i class="material-icons">remove</i>
+            </span>
+          </button>
+          <span class="title fw-bolder px-4">{{quantity}}</span>
+          <button (click)="updateQuantity(1)" class="p-0 pt-1 m-0 btn btn-outline-primary">
+            <span aria-hidden="true">
+              <i class="material-icons">add</i>
+            </span>
+          </button>
+
+        </div>
+        <div class="col-4 text-center">
+          <button (click)="addToCart()" class="pb-0 px-2 pt-1 btn btn-primary"><span aria-hidden="true"><i class="material-icons">add_shopping_cart</i></span></button>
+        </div>
+      </div>
     </div>
   </div>
   <!-- END PRODUCT LISTING -->
