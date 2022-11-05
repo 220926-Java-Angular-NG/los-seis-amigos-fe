@@ -1,4 +1,4 @@
-<nav class="px-4 navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;"> 
+<nav class="px-4 navbar navbar-expand-sm navbar-light bg-light" style="background-color: #e3f2fd;"> 
   <div class="navbar-toggler w-100 row" style="border: 0;">
     <div class="col-6">
       <button (click)="toggleCollapse()" class="navbar-toggler mr-auto"
@@ -24,7 +24,11 @@
 
   <div class="container collapse">
     <div class="collapse navbar-expand-lg navbar-collapse " id="navbarTogglerDemo01">
-      <h1 class="navbar-brand p-0" href="#" >Los Seis Amigos</h1>
+      <div class="navbar-brand text-center" style="font-size: 17px; line-height: 10px!important;">
+        <h1 class="navbar-brand p-0 m-0" href="#" >Los Seis Amigos'</h1>
+        <cite title="small text-muted" style="font-size: 15px;">Magic Shop</cite>
+
+      </div>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
           <a class="nav-link" routerLink="/items">Products</a>
@@ -50,14 +54,14 @@
   <div class="navbar-toggler w-50  px-3 mx-2" id="navbarTogglerDemo01" *ngIf="collapse">
     <h1 class="navbar-brand p-0 text-center" href="#" >Los Seis Amigos</h1>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleCollapse(true)" routerLink="/items">Products</a>
+      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home</a>
+        <a class="nav-link" (click)="toggleCollapse(true)" routerLink="/profile">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="items">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="">Logout</a>
+        <a class="nav-link" (click)="toggleCollapse(true)" routerLink="">Logout</a>
       </li>
     </ul>
   </div>

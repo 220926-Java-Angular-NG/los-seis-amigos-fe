@@ -1,0 +1,17 @@
+<div class="container py-5" *ngIf="user">
+  <div class="row mx-auto mb-5">
+    <div class="title h3 mx-auto text-center" >
+      WELCOME {{user.username | uppercase}}!
+    </div>
+  </div>
+  <hr>
+  <!-- <div class="row my-5">
+  </div> -->
+  <div class="row bg-light rounded d-flex justify-content-evenly py-4">
+    <div class="title h3 mx-auto text-center mb-3" >
+      INVENTORY
+    </div>
+    <hr>
+
+    <app-card-item class="col-lg-2 col-md-3 col-5" *ngFor="let card of cardsOwned" [card]="card"></app-card-item>
+</div>

@@ -13,6 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CardItemComponent } from './components/card-item/card-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ProductWrapperComponent,
     CartComponent,
     CartItemComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProfileComponent,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,
