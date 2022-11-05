@@ -1,0 +1,64 @@
+<nav class="px-4 navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;"> 
+  <div class="navbar-toggler w-100 row" style="border: 0;">
+    <div class="col-6">
+      <button (click)="toggleCollapse()" class="navbar-toggler mr-auto"
+        type="button"
+        data-toggle="collapse" 
+        data-target="#navbarTogglerDemo01" 
+        aria-controls="navbarTogglerDemo01" 
+        aria-expanded="true" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+    <div class="ml-auto col-6" style="text-align: right;">
+      <button (click)="goToCart()" class="p-0 px-1 pt-1 m-0 btn" >
+        <span aria-hidden="true">
+          <i class="material-icons" style="font-size: 30px;">shopping_cart</i>
+        </span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="container collapse">
+    <div class="collapse navbar-expand-lg navbar-collapse " id="navbarTogglerDemo01">
+      <h1 class="navbar-brand p-0" href="#" >Los Seis Amigos</h1>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/items">Products</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button (click)="goToCart()" class="navbar-collapse collapse p-0 px-1 pt-1 m-0 btn px-auto text-center">
+        <span aria-hidden="true">
+          <i class="material-icons" style="font-size: 30px;">shopping_cart</i>
+        </span>
+      </button>
+    </div>
+  </div>
+  
+
+  <div class="navbar-toggler w-50  px-3 mx-2" id="navbarTogglerDemo01" *ngIf="collapse">
+    <h1 class="navbar-brand p-0 text-center" href="#" >Los Seis Amigos</h1>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="items">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

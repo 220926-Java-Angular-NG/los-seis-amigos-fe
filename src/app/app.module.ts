@@ -12,6 +12,7 @@ import { ProductWrapperComponent } from './components/product-wrapper/product-wr
 import {MatIconModule} from '@angular/material/icon';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     ProductListingComponent,
     ProductWrapperComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
