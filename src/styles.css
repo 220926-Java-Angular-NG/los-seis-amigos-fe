@@ -1,3 +1,5 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 .wrapper{
@@ -17,12 +19,10 @@
     width:100px;
     cursor:pointer;
 } */
-/* button:disabled{
-    background-color: gray;
-    opacity: 0.8;
-    color: white;
+button:disabled{
     cursor: not-allowed;
-} */
+    pointer-events: all !important;
+}
 /* .block{
     width: 100%;
     background: linear-gradient(180deg, black, purple,gold);

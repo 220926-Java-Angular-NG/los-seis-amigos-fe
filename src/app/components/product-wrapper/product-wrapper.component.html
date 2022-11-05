@@ -1,5 +1,10 @@
-<div class="container row mx-auto d-flex justify-content-evenly py-5 align-items-stretch">
-  <app-product-listing class="col d-flex align-items-stretch"
+<div class="container w-75 row mx-auto d-flex py-5 align-items-stretch">
+  <app-product-listing class="col-12 col-sm-6 col-md-4 col-xl-3 d-flex align-items-stretch"
+    *ngFor="let pack of packs"
+    [pack]="pack"
+  >
+  </app-product-listing>
+  <app-product-listing class="col-12 col-sm-6 col-md-4 col-xl-3 d-flex align-items-stretch"
     *ngFor="let pack of packs"
     [pack]="pack"
   >

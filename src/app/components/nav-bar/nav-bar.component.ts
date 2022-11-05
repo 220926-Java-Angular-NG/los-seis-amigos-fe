@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css']
+})
+export class NavBarComponent implements OnInit {
+
+  collapse:boolean = false
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  toggleCollapse(newCollapseVal:boolean = this.collapse) {
+    this.collapse = !newCollapseVal
+  }
+  goToCart() {
+    this.router.navigate(['/cart'])
+  }
+
+}

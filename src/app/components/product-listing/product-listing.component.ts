@@ -9,6 +9,8 @@ import { Pack } from '../product-wrapper/Pack';
 export class ProductListingComponent implements OnInit {
 
   @Input() pack?:Pack
+  quantity : number = 1
+  isInCart?:boolean
   // @Input() name?:string = 'Name of Pack'
   // @Input() setName?:string = 'Classic Sixth Edition'
   // @Input() imgSrc?:string = 'https://i.ebayimg.com/images/g/Ur8AAOSw85Rivgj-/s-l500.jpg'
@@ -19,8 +21,18 @@ export class ProductListingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkIfInCart() {
+    // isInCart = //method that checks if its in cart
+  }
+
   addToCart(): void {
-    console.log('added to imaginary cart')
+    if (this.pack)
+      console.log(`added ${this.quantity} packs of ${this.pack.setName} to imaginary cart costing ${this.pack.price * this.quantity}`)
+  }
+
+  updateQuantity(change:number): void {
+    if (this.quantity + change >= 1)
+      this.quantity += change
   }
 
 }

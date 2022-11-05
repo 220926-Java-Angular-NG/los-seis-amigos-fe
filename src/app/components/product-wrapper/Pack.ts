@@ -4,4 +4,5 @@ export interface Pack {
   price:number
   imgSrc:string
   description:string
+  cardCount:number
 }
