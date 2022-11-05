@@ -37,28 +37,28 @@ export const SAMPLE_PACKS: Pack[] = [
     description: `Includes 10 random cards from the `
   },
   {
-    id: 5,
+    id: 6,
     price:5.99,
     setName:'Mirage',
     imgSrc: 'https://i.ebayimg.com/images/g/FQUAAOSw1a1g1gDa/s-l640.jpg',
     description: `Includes 10 random cards from the `
   },
   {
-    id: 6,
+    id: 7,
     price:5.99,
     setName:'Visions',
     imgSrc: 'https://crystal-cdn4.crystalcommerce.com/photos/30678/CnrmyF2kmtqMCyvn.jpg',
     description: `Includes 10 random cards from the `
   },
   {
-    id: 7,
+    id: 8,
     price:5.99,
     setName:'Weatherlight',
     imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCV6wU_dn8RH8TJc66n78lTHposKWkbuOXCQ&usqp=CAU',
     description: `Includes 10 random cards from the `
   },
   {
-    id: 8,
+    id: 9,
     price:5.99,
     setName:'Tempest',
     imgSrc: 'https://m.media-amazon.com/images/I/51iJIWVA9WL._AC_SY580_.jpg',

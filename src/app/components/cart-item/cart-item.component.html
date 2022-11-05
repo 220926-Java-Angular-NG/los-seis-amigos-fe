@@ -1,0 +1,35 @@
+<div class="row mx-auto bg-white rounded mt-3" style="max-width: 30rem;" *ngIf="cartItem">
+  <div class="col-md-2 col-3 col-xl-2">
+    <img class="py-2 mr-auto" style="height: 8rem; width: auto;" src="{{cartItem.pack.imgSrc}}" alt="Card image cap">
+  </div>
+  <div class="col-md-8 col-7 ">
+    <div class="row h-50">
+      <p class="h5 pt-3">
+        {{cartItem.pack.setName}}
+      </p>
+    </div>
+    <div class="row h-50 my-auto">
+      <div class="col my-auto">
+        <button  class="p-0 px-1 pt-1 m-0 btn btn-outline-danger">
+          <span aria-hidden="true">
+            <i class="material-icons">remove</i>
+          </span>
+        </button>
+        <span class="title fw-bolder px-3">{{cartItem.quantity}}</span>
+        <button  class="p-0 px-1 pt-1 m-0 btn btn-outline-primary">
+          <span aria-hidden="true">
+            <i class="material-icons">add</i>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-2 col-md-2 mr-1 h-100 my-auto text-center">
+    <button  class="p-0 px-1 pt-1 m-0 btn text-danger text-center">
+      <span aria-hidden="true">
+        <i class="material-icons">delete</i>
+      </span>
+    </button>
+  </div>
+</div>

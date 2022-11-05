@@ -26,7 +26,8 @@ export class ProductListingComponent implements OnInit {
   }
 
   addToCart(): void {
-    console.log(`added ${this.quantity} packs of ${this.pack?.setName} to imaginary cart`)
+    if (this.pack)
+      console.log(`added ${this.quantity} packs of ${this.pack.setName} to imaginary cart costing ${this.pack.price * this.quantity}`)
   }
 
   updateQuantity(change:number): void {
