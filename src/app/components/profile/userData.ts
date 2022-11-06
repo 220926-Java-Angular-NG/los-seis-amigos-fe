@@ -1,89 +1,153 @@
 import { Card, UserInterface } from "./userInterface";
 
-export const SAMPLE_USER:UserInterface = {
+export const SAMPLE_USER: UserInterface = {
   firstName: 'Jonathan',
   lastName: 'Bedoy',
   username: 'jBedoy',
   email: 'jbedoy@gmail.com'
 }
 
-export const SAMPLE_CARDS:Card[] = [
+export const SAMPLE_CARDS: Card[] = [
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 5,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 4,
+    "name": "Artisan of Kozilek",
+    "setName": "commander",
+    "imgLocation": "cmd/1",
+    "actualSet": "cmd",
+    "color": "",
+    "colorID": "",
+    "cost": "{9}",
+    "convertedCost": "9",
+    "type": "Creature - Eldrazi",
+    "power": "10",
+    "toughness": "9",
+    "loyalty": "",
+    "rarity": "U",
+    "draftQualities": "",
+    "sound": "creature",
+    "script": "",
+    "text": "When you cast this spell, you may return target creature card from your graveyard to the battlefield. | Annihilator 2"
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 3,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 20,
+    "name": "Journey to Nowhere",
+    "setName": "commander",
+    "imgLocation": "cmd/17",
+    "actualSet": "cmd",
+    "color": "W",
+    "colorID": "W",
+    "cost": "{1}{W}",
+    "convertedCost": "2",
+    "type": "Enchantment",
+    "power": "",
+    "toughness": "",
+    "loyalty": "",
+    "rarity": "C",
+    "draftQualities": "",
+    "sound": "enchantment",
+    "script": "",
+    "text": "When Journey to Nowhere enters the battlefield, exile target creature. | When Journey to Nowhere leaves the battlefield, return the exiled card to the battlefield under its owner's control."
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 15,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 5,
+    "name": "Afterlife",
+    "setName": "commander",
+    "imgLocation": "cmd/2",
+    "actualSet": "cmd",
+    "color": "W",
+    "colorID": "W",
+    "cost": "{2}{W}",
+    "convertedCost": "3",
+    "type": "Instant",
+    "power": "",
+    "toughness": "",
+    "loyalty": "",
+    "rarity": "U",
+    "draftQualities": "",
+    "sound": "instant",
+    "script": "/spawn [soi] Spirit (W 1/1 Flying)",
+    "text": "Destroy target creature. It can't be regenerated. Its controller creates a 1/1 white Spirit creature token with flying."
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 2000,
+    "name": "Rakdos Guildgate",
+    "setName": "c17",
+    "imgLocation": "c17/271",
+    "actualSet": "c17",
+    "color": "",
+    "colorID": "BR",
+    "cost": "",
+    "convertedCost": "0",
+    "type": "Land - Gate",
+    "power": "",
+    "toughness": "",
+    "loyalty": "",
+    "rarity": "C",
+    "draftQualities": "",
+    "sound": "land",
+    "script": "/cr90",
+    "text": "Rakdos Guildgate enters the battlefield tapped. | {T}: Add {B} or {R}."
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 10,
+    "name": "Archangel of Strife",
+    "setName": "commander",
+    "imgLocation": "cmd/7",
+    "actualSet": "cmd",
+    "color": "W",
+    "colorID": "W",
+    "cost": "{5}{W}{W}",
+    "convertedCost": "7",
+    "type": "Creature - Angel",
+    "power": "6",
+    "toughness": "6",
+    "loyalty": "",
+    "rarity": "R",
+    "draftQualities": "",
+    "sound": "creature",
+    "script": "/ch",
+    "text": "Flying | As Archangel of Strife enters the battlefield, each player chooses war or peace. | Creatures controlled by players who chose war get +3/+0. | Creatures controlled by players who chose peace get +0/+3."
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 20000,
+    "name": "[bfz] Elemental (RG 5/5)",
+    "setName": "bfz",
+    "imgLocation": "tbfz/11",
+    "actualSet": "tbfz",
+    "color": "RG",
+    "colorID": "",
+    "cost": "",
+    "convertedCost": "0",
+    "type": "Token Creature - Elemental",
+    "power": "5",
+    "toughness": "5",
+    "loyalty": "",
+    "rarity": "T",
+    "draftQualities": null,
+    "sound": null,
+    "script": null,
+    "text": null
   },
   {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
-  },
-  {
-    name: 'Artisan of Kozilek',
-    setName: 'commander',
-    quantityOwned: 115,
-    imgSrc: 'http://magicplugin.normalitycomics.com/cardimages/cmd/1.jpg'
+    "cardId": 20015,
+    "name": "Walker of the Wastes",
+    "setName": "ogw",
+    "imgLocation": "ogw/10",
+    "actualSet": "ogw",
+    "color": "",
+    "colorID": "",
+    "cost": "{4}{C}",
+    "convertedCost": "5",
+    "type": "Creature - Eldrazi",
+    "power": "4",
+    "toughness": "4",
+    "loyalty": "",
+    "rarity": "U",
+    "draftQualities": "",
+    "sound": "creature",
+    "script": "",
+    "text": "Trample | Walker of the Wastes gets +1/+1 for each land you control named Wastes."
   }
+
+
 ]
