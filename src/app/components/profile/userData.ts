@@ -1,10 +1,12 @@
 import { Card, UserInterface } from "./userInterface";
 
 export const SAMPLE_USER: UserInterface = {
-  firstName: 'Jonathan',
-  lastName: 'Bedoy',
+  id: 1,
+  firstname: 'Jonathan',
+  lastname: 'Bedoy',
   username: 'jBedoy',
-  email: 'jbedoy@gmail.com'
+  email: 'jbedoy@gmail.com',
+  hasBought: false
 }
 
 export const SAMPLE_CARDS: Card[] = [

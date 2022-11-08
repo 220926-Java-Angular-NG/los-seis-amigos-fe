@@ -10,6 +10,7 @@ import {Card, UserInterface} from './userInterface';
 })
 export class ProfileComponent implements OnInit {
 
+  // TODO: implement userService
   user?:UserInterface
   cardsOwned?:Card[]
   card?:Card
@@ -23,13 +24,10 @@ export class ProfileComponent implements OnInit {
   }
 
   getCards() {
-    // this.cardService.getCardById(73).subscribe(cardPulled => {
-    //   this.card = cardPulled
-    //   this.cardsOwned?.push(this.card)
-    // })
-
-    this.cardService.getCardsBySet('voc').subscribe(cards => {
+    // TODO: implement play inventory cards here
+    this.cardService.getCardsBySet('commander').subscribe(cards => {
       this.cardsOwned = cards
+      console.log(this.cardsOwned)
     })
 
   }

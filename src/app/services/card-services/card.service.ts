@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
+import { Set } from 'src/app/components/cart-item/CartItem';
 import { Card } from 'src/app/components/profile/userInterface';
 
 @Injectable({
@@ -8,6 +9,7 @@ import { Card } from 'src/app/components/profile/userInterface';
 })
 export class CardService {
   private cardUrl = 'http://localhost:8080/cards'
+  private setsUrl = 'http://localhost:8080/sets'
   httpOptions = {
     // headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -25,6 +27,14 @@ export class CardService {
       .pipe(
         tap(_ => console.log('fetched Cards with SetName: ', setName)),
         catchError(this.handleError<Card[]>(`getCardsBySet setName=${setName}`))
+      );
+  }
+
+  getAllSets(): Observable<Set[]> {
+    return this.http.get<Set[]>(`${this.setsUrl}`)
+      .pipe(
+        tap(_ => console.log('fetched All Sets: ')),
+        catchError(this.handleError<Set[]>(`getAllSets`))
       );
   }
 

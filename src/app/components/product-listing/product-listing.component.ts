@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DEFAULT_SET_PRICE, Set } from '../cart-item/CartItem';
 import { Pack } from '../product-wrapper/Pack';
 
 @Component({
@@ -8,17 +9,15 @@ import { Pack } from '../product-wrapper/Pack';
 })
 export class ProductListingComponent implements OnInit {
 
-  @Input() pack?:Pack
+  @Input() set?:Set
   quantity : number = 1
   isInCart?:boolean
-  // @Input() name?:string = 'Name of Pack'
-  // @Input() setName?:string = 'Classic Sixth Edition'
-  // @Input() imgSrc?:string = 'https://i.ebayimg.com/images/g/Ur8AAOSw85Rivgj-/s-l500.jpg'
-  // @Input() price?:number = 5.99
+  price:number = DEFAULT_SET_PRICE
 
   constructor() { }
 
   ngOnInit(): void {
+    this.price = this.set?.price ? this.set.price : DEFAULT_SET_PRICE 
   }
 
   checkIfInCart() {
@@ -26,8 +25,8 @@ export class ProductListingComponent implements OnInit {
   }
 
   addToCart(): void {
-    if (this.pack)
-      console.log(`added ${this.quantity} packs of ${this.pack.setName} to imaginary cart costing ${this.pack.price * this.quantity}`)
+    if (this.set)
+      console.log(`added ${this.quantity} packs of ${this.set.name} to imaginary cart costing ${this.price * this.quantity}`)
   }
 
   updateQuantity(change:number): void {

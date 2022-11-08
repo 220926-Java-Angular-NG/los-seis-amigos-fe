@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center">
     <h2 class="mt-4 py-4 text-center">CART</h2>
     <div class="col-lg-6 col-sm-8 col-12">
-      <app-cart-item *ngFor="let item of cartItems" [cartItem]="item"></app-cart-item>
+      <app-cart-item *ngFor="let item of cartItems" [cartItem]="item" (deleteItemEvent)="deleteFromCart($event)"></app-cart-item>
     </div>
     <div class="my-3 mx-5 col-11 col-md-4 bg-light rounded" style="max-height: 15rem;">
       <div class="row px-4">

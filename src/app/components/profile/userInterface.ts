@@ -2,10 +2,13 @@ type Nullable<T> = T | null;
 
 
 export interface UserInterface {
-  firstName:string
-  lastName:string
+  id:number
+  firstname:string
+  lastname:string
   username: string
+  password?:Nullable<string>
   email:string
+  hasBought:boolean
 }
 
 export interface Card {
@@ -14,7 +17,7 @@ export interface Card {
   setName:string
   // quantityOwned:number
   imgLocation?:Nullable<string>
-  actualSet:Nullable<string>
+  actualSet:string
   color?:Nullable<string>
   colorID?:Nullable<string>
   cost?:Nullable<string>
