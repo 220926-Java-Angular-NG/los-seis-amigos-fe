@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { CartItem } from '../components/cart-item/CartItem';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,18 @@ export class CardsOwnedService {
   httpOptions = {
     // headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
+
+  // TODO: make cardOwned interface
+  // TODO: implement the cardOwned interface here
+  // will return a list of cards (dont really need them)
+  // TODO: implement getUsersCards()
+  // public openSet(cartItem:CartItem) {
+  //   return this.http.post<>(this.cardUrl+`/${cardId}`)
+  //     .pipe(
+  //       tap(_ => console.log('fetched Card with Id: ', cardId)),
+  //       catchError(this.handleError<Card>(`getCardById id=${cardId}`))
+  //     );
+  // }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
