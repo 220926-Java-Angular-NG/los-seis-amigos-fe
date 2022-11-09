@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart-services/cart.service';
+import { UserService } from 'src/app/services/user-services/user.service';
+import { DEFAULT_SET_PRICE, Set, CartItem } from '../cart-item/CartItem';
 import { Pack } from '../product-wrapper/Pack';
 
 @Component({
@@ -8,17 +12,19 @@ import { Pack } from '../product-wrapper/Pack';
 })
 export class ProductListingComponent implements OnInit {
 
-  @Input() pack?:Pack
+  @Input() set?:Set
   quantity : number = 1
   isInCart?:boolean
-  // @Input() name?:string = 'Name of Pack'
-  // @Input() setName?:string = 'Classic Sixth Edition'
-  // @Input() imgSrc?:string = 'https://i.ebayimg.com/images/g/Ur8AAOSw85Rivgj-/s-l500.jpg'
-  // @Input() price?:number = 5.99
+  price:number = DEFAULT_SET_PRICE
+  cartId?:number
 
-  constructor() { }
+  constructor(private cartService:CartService, private userService:UserService, private router:Router) { }
 
   ngOnInit(): void {
+    // if (!this.userService.isLoggedIn()) {
+    //   this.router.navigate(['Home'])
+    // }
+    this.price = this.set?.price ? this.set.price : DEFAULT_SET_PRICE 
   }
 
   checkIfInCart() {
@@ -26,8 +32,38 @@ export class ProductListingComponent implements OnInit {
   }
 
   addToCart(): void {
-    if (this.pack)
-      console.log(`added ${this.quantity} packs of ${this.pack.setName} to imaginary cart costing ${this.pack.price * this.quantity}`)
+    
+    if (this.set) {
+      const cartItem:CartItem = {
+        set: this.set,
+        cartItemId: 0,
+        quantity: this.quantity,
+        user: {
+          id: this.userService.getUserId()
+        }
+      }
+      this.cartService.addCartItem(cartItem).subscribe(_cartItem => {
+        console.log('added to cart: ', _cartItem)
+        if (this.set) {
+          this.set.isInCart = true
+          this.set.cartItemId = _cartItem.cartItemId
+        }
+      })
+
+    }
+    // console.log(`added ${this.quantity} packs of ${this.set.name} to imaginary cart costing ${this.price * this.quantity}`)
+  }
+
+  removeFromCart():void {
+    if (this.set?.cartItemId)
+      this.cartService.removeCartItemById(this.set.cartItemId).subscribe((s) => {
+        // if (s && this.cartItems)
+          // this.cartItems = this.cartItems.filter(item => item.cartItemId !== cartId)
+        console.log('removed item from cart');
+        if (this.set)
+          this.set.isInCart = false
+        // this.isInCart = 
+      })
   }
 
   updateQuantity(change:number): void {

@@ -15,6 +15,9 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +31,17 @@ import { CardItemComponent } from './components/card-item/card-item.component';
     CartItemComponent,
     NavBarComponent,
     ProfileComponent,
-    CardItemComponent
+    CardItemComponent,
+    ResetPasswordComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

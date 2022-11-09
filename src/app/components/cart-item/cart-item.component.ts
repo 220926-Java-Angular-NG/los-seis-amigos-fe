@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CartItem } from '../cart/CartItem';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart-services/cart.service';
+import { CartItem } from './CartItem';
 
 @Component({
   selector: 'app-cart-item',
@@ -9,8 +10,10 @@ import { CartItem } from '../cart/CartItem';
 export class CartItemComponent implements OnInit {
 
   @Input() cartItem?:CartItem
+  @Output() deleteItemEvent = new EventEmitter<number>();
+  @Output() updateItemQuantityEvent = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +23,23 @@ export class CartItemComponent implements OnInit {
   updateQuantity(change:number): void {
     if (this.cartItem)
       if (this.cartItem.quantity + change >= 1)
-        this.cartItem.quantity += change
+        this.updateCart(this.cartItem.quantity + change)
+  }
+
+  updateCart(quantity:number):void {
+    if(this.cartItem) {
+      this.updateItemQuantityEvent.emit(quantity)
+    }
+  }
+
+  deleteCartItem():void {
+    if(this.cartItem) {
+      this.deleteItemEvent.emit(this.cartItem.cartItemId)
+      // this.cartService.removeCartItemById(this.cartItem.cartItemId).subscribe((s) => {
+      //   console.log(s,'asdasd');
+      // })
+
+    }
   }
 
 }

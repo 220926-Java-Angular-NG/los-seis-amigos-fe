@@ -1,19 +1,19 @@
 <!-- <div class="container row mx-auto d-flex justify-content-evenly "> -->
 
   <!-- START PRODUCT LISTING -->
-  <div class="card w-100 mb-3 mx-auto card-adjustment" style="" *ngIf="pack">
+  <div class="card w-100 mb-3 mx-auto card-adjustment" style="" *ngIf="set">
     <div class="w-100 text-center mx-auto">
-      <img class="p-1 mx-auto mb-auto" style="height: 17rem;" src="{{pack.imgSrc}}" alt="Card image cap">
+      <img class="p-1 mx-auto mb-auto" style="height: 17rem;" src="{{set.pack_image}}" alt="Card image cap">
     </div>
     <div class="p-2 text-center">
       <hr>
-      <h5 class="card-title text-decoration-underline"><abbr title="Contains {{pack.cardCount}} cards from">{{pack.setName}}</abbr></h5>
+      <h5 class="card-title text-decoration-underline"><abbr title="Contains 15 cards from {{set.name}}">{{set.name}}</abbr></h5>
       <!-- <p class="card-text text-muted">Contains {{pack.cardCount}} cards </p> -->
       <p class="fw-bold text-right" style="">
-        <span class="card-text mr-auto fw-bold p-2">${{pack.price}} </span>
+        <span class="card-text mr-auto fw-bold p-2">${{price}} </span>
       </p>
       
-      <div class="row p-0">
+      <div class="row p-0" *ngIf="!set.isInCart">
         <div class=" px-0 col-7 text-center">
           <button (click)="updateQuantity(-1)" style="" class="p-0 px-1 pt-1 m-0 btn btn-outline-danger">
             <span aria-hidden="true">
@@ -33,6 +33,9 @@
           
           <button (click)="addToCart()" class="w-100 pb-0 px-2 pt-1 btn btn-primary"><span aria-hidden="true"><i class="material-icons">add_shopping_cart</i></span></button>
         </div>
+      </div>
+      <div class="row px-2" *ngIf="set.isInCart">
+        <button (click)="removeFromCart()" class="w-100 pb-0 px-2 pt-1 btn btn-danger"><span aria-hidden="true"><i class="material-icons">remove_shopping_cart</i></span></button>
       </div>
       
     </div>
