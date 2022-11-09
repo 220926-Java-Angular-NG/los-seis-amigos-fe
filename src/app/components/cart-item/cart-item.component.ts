@@ -11,6 +11,7 @@ export class CartItemComponent implements OnInit {
 
   @Input() cartItem?:CartItem
   @Output() deleteItemEvent = new EventEmitter<number>();
+  @Output() updateItemQuantityEvent = new EventEmitter<number>();
 
   constructor(private cartService:CartService) { }
 
@@ -22,7 +23,13 @@ export class CartItemComponent implements OnInit {
   updateQuantity(change:number): void {
     if (this.cartItem)
       if (this.cartItem.quantity + change >= 1)
-        this.cartItem.quantity += change
+        this.updateCart(this.cartItem.quantity + change)
+  }
+
+  updateCart(quantity:number):void {
+    if(this.cartItem) {
+      this.updateItemQuantityEvent.emit(quantity)
+    }
   }
 
   deleteCartItem():void {

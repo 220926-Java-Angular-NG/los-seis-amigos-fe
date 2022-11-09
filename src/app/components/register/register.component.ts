@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user-services/user.service';
+import { UserInterface } from '../profile/userInterface';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   register:any = FormGroup;
 
-  constructor(private fb:FormBuilder, private router:Router) { }
+  constructor(private fb:FormBuilder, private router:Router, private userService:UserService) { }
 
   ngOnInit(): void {
     this.register = this.fb.group({
@@ -22,10 +24,17 @@ export class RegisterComponent implements OnInit {
       
     });
   }
-  regSubmit(data:any){
 
-    console.log(data);
-
+  //TODO: call register in userService
+  regSubmit(data:UserInterface){
+    
+    this.userService.registerUser(data).subscribe(_user => {
+      console.log(_user);
+      if (_user.id !== null) {
+        localStorage.setItem('userId', _user.id.toString())
+        this.router.navigate(['items'])
+      }
+    })
 
   }
   toLogin(){

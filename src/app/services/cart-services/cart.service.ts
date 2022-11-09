@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { CartItem } from 'src/app/components/cart-item/CartItem';
+import { UserService } from '../user-services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +29,15 @@ export class CartService {
     )
   }
 
+  updateCartItemQuantity(cartItemId:number, quantity:number) {
+    return this.http.put<CartItem>(`${this.cartUrl}/item/${cartItemId}/quantity/${quantity}`, this.httpOptions).pipe(
+      tap(newItem => console.log(`updated cartItem = ${newItem}`)),
+      catchError(this.handleError<CartItem>(`updateCartItemQuantity cartItem=${cartItemId}`))
+    )
+  }
+
   removeCartItemById(cartItemId:number) {
     return this.http.delete(`http://localhost:8080/carts/item/${cartItemId}`, this.httpOptions)
-    
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

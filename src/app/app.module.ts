@@ -16,6 +16,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     CartItemComponent,
     NavBarComponent,
     ProfileComponent,
-    CardItemComponent
+    CardItemComponent,
+    ResetPasswordComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

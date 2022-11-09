@@ -3,12 +3,12 @@ type Nullable<T> = T | null;
 
 export interface UserInterface {
   id:number
-  firstname:string
-  lastname:string
-  username: string
-  password?:Nullable<string>
-  email:string
-  hasBought:boolean
+  username?:string
+  password?:string
+  firstname?: string
+  lastname?:Nullable<string>
+  email?:string
+  hasBought?:boolean
 }
 
 export interface Card {

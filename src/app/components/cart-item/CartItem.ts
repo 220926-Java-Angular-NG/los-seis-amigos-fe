@@ -13,6 +13,8 @@ export interface Set {
   pack_image:string
   name:string
   price?:number 
+  isInCart?:boolean
+  cartItemId?:number
 }
 
 

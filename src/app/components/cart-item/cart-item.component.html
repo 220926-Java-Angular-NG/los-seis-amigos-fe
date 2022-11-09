@@ -10,18 +10,22 @@
     </div>
     <div class="row h-50 my-auto">
       <div class="col my-auto">
-        <button  class="p-0 px-1 pt-1 m-0 btn btn-outline-danger">
+        <button (click)="updateQuantity(-1)" class="p-0 px-1 pt-1 m-0 btn btn-outline-danger">
           <span aria-hidden="true">
             <i class="material-icons">remove</i>
           </span>
         </button>
         <span class="title fw-bolder px-3">{{cartItem.quantity}}</span>
-        <button  class="p-0 px-1 pt-1 m-0 btn btn-outline-primary">
+        <button (click)="updateQuantity(1)" class="p-0 px-1 pt-1 m-0 btn btn-outline-primary">
           <span aria-hidden="true">
             <i class="material-icons">add</i>
           </span>
         </button>
-
+        <!-- <button (click)="updateCart()" class="p-0 ml-1 px-1 pt-1 mx-1 mr-0 btn btn-outline-success">
+          <span aria-hidden="true">
+            <i class="material-icons">update</i>
+          </span>
+        </button> -->
       </div>
     </div>
   </div>

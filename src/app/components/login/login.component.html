@@ -2,7 +2,7 @@
     <div class="mx-auto h-100 d-flex align-items-center">
         <form class="text-center mx-auto " [formGroup]="login">
             <h2>LOGIN</h2>
-            <input type="text" placeholder="Enter Email" class="form-control py-2 px-3" formControlName= "email"/> <br>
+            <input type="text" placeholder="Enter Username" class="form-control py-2 px-3" formControlName= "username"/> <br>
             <input type="password" placeholder="Enter Password" class="form-control py-2 px-3" formControlName= "password"/>
             <div class="row d-flex justify-content-center">
                 <button class="w-75 my-4 px-4 py-2 btn btn-info" (click) ="loginSubmit(login.value)" [disabled]="login.invalid">Login</button>
