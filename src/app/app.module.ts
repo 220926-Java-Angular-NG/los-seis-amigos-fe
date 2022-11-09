@@ -18,6 +18,7 @@ import { CardItemComponent } from './components/card-item/card-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CardSetWrapperComponent } from './components/card-set-wrapper/card-set-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     ProfileComponent,
     CardItemComponent,
     ResetPasswordComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CardSetWrapperComponent
   ],
   imports: [
     BrowserModule,

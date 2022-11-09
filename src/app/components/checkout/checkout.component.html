@@ -26,7 +26,7 @@
                 {{item.set.name}}
               </p>
             </div>
-            <div class="row h-50  w-100 ml-auto my-auto" style="text-align: right;">
+            <div class="row h-50  w-100 ml-auto my-auto" style="text-align: center;">
               <p>
                 {{item.quantity}} QTY. @ {{price}} = {{(item.quantity * price) | number: '1.2'}}
               </p>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="row px-4">
-          <button (click)="finishCheckout()" class="mt-3 py-2 w-100 btn btn-primary" [disabled]="checkoutInfo.invalid">COMPLETE CHECKOUT</button>
+          <button (click)="finishCheckout()" class="mt-3 py-2 w-100 btn btn-primary">COMPLETE CHECKOUT</button>
         </div>
       </div>
 

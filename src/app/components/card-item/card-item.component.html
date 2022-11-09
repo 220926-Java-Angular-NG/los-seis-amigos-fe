@@ -1,5 +1,12 @@
 <div class="m-1 p-0 card" *ngIf="card">
-  <abbr title="{{card.name}} is from set {{card.setName}}. You own: ">
-    <img src="http://magicplugin.normalitycomics.com/cardimages/{{card.imgLocation}}.jpg" class="card-img" alt="Picture of Magic the gathering card {{card.name}}">
+  
+  <abbr title="You own: {{card.quantity}}.">
+    <img src="http://magicplugin.normalitycomics.com/cardimages/{{card.imgLocation}}.jpg" class="card-img" alt="Picture of Magic the gathering card">
   </abbr>
+
+  <div class="card-img-overlay p-0"*ngIf="card.quantity > 1">
+    <div class="w-25 bg-dark rounded-5 text-center p-0 m-0 badgeHover" style="">
+      <span class="badge badge-light  p-0 m-0" style="color:white;">x{{card.quantity}}</span>
+    </div>
+  </div>
 </div>

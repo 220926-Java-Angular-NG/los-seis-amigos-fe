@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { cardOwned } from 'src/app/services/cardsOwned';
 import { Card } from '../profile/userInterface';
 
 @Component({
@@ -8,7 +9,7 @@ import { Card } from '../profile/userInterface';
 })
 export class CardItemComponent implements OnInit {
 
-  @Input() card?:Card
+  @Input() card?:cardOwned
 
   constructor() { }
 

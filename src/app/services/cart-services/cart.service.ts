@@ -40,6 +40,10 @@ export class CartService {
     return this.http.delete(`http://localhost:8080/carts/item/${cartItemId}`, this.httpOptions)
   }
 
+  clearUserCartByUserId(userId:number) {
+    return this.http.delete(`http://localhost:8080/carts/user/${userId}`, this.httpOptions)
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
