@@ -42,7 +42,7 @@ export class CardSetWrapperComponent implements OnInit {
       })
       // this.userSets = _sets
       // this.showSet = this.userSets[0]
-      if(this.userSetsWithName)
+      if(this.userSetsWithName?.length > 0)
         this.getUserCardsOwnedSet(this.userSetsWithName[0].set)
     })
   }

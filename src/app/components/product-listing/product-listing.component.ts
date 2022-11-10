@@ -25,10 +25,21 @@ export class ProductListingComponent implements OnInit {
     //   this.router.navigate(['Home'])
     // }
     this.price = this.set?.price ? this.set.price : DEFAULT_SET_PRICE 
+    this.checkIfInCart()
   }
 
   checkIfInCart() {
-    // isInCart = //method that checks if its in cart
+    if (this.set)
+      this.cartService.getCartByUserId(this.userService.getUserId()).subscribe(_cartItems => {
+        _cartItems.forEach(item => {
+
+          if (this.set?.setcode === item.set.setcode) {
+            this.set.isInCart = true
+            this.set.cartItemId = item.cartItemId
+
+          }
+          })
+        })
   }
 
   addToCart(): void {
@@ -54,7 +65,13 @@ export class ProductListingComponent implements OnInit {
     // console.log(`added ${this.quantity} packs of ${this.set.name} to imaginary cart costing ${this.price * this.quantity}`)
   }
 
+  goToCardList() {
+    if (this.router.url === '/items' &&this.set)
+      this.router.navigate([`cards/set/${this.set.setcode}`])
+  }
+
   removeFromCart():void {
+    console.log('attemp to delete')
     if (this.set?.cartItemId)
       this.cartService.removeCartItemById(this.set.cartItemId).subscribe((s) => {
         // if (s && this.cartItems)
