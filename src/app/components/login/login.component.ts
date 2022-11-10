@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit {
   loginSubmit(data:any){
 
     this.userService.login(data.username, data.password).subscribe(_user => {
-      console.log(_user.id)
-      if (_user.id !== null) {
-        this.router.navigate(['items'])
+      if (_user.username !== "PASSWORDMISSMATCH") {
+          this.router.navigate(['items'])
+      }else{
+          alert("Password does not match!")
       }
     })
 
