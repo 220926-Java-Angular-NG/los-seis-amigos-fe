@@ -24,14 +24,16 @@ export class ResetPasswordComponent implements OnInit {
 
   resetSubmit(data:any) {
     this.userService.resetPassword(data.username, data.password, data.newPassword).subscribe(_user => {
-      if (_user !== null)
+      if (_user !== undefined && _user !== null){
         console.log('changed password: ', _user)
+        this.toDash()
+      }
       else console.log('wrong password')
     })
   }
 
   toDash() {
-    this.router.navigate(['home'])
+    this.router.navigate(['profile'])
   }
 
 }

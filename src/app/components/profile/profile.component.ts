@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardService } from 'src/app/services/card-services/card.service';
 import { CardsOwnedService } from 'src/app/services/cards-owned.service';
 import { cardOwned } from 'src/app/services/cardsOwned';
@@ -19,7 +20,7 @@ export class ProfileComponent implements OnInit {
   card?:Card
 
 
-  constructor(private userService:UserService, private cardService: CardService, private cardsOwnedService:CardsOwnedService) { }
+  constructor(private router:Router, private userService:UserService, private cardService: CardService, private cardsOwnedService:CardsOwnedService) { }
 
   ngOnInit(): void {
     // this.user = SAMPLE_USER
@@ -49,6 +50,9 @@ export class ProfileComponent implements OnInit {
     this.userService.fetchUser().subscribe(_user => {
       this.user = _user
     })
+  }
+  resetPassword() {
+    this.router.navigate(['reset'])
   }
 
   
