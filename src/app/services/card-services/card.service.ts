@@ -21,6 +21,22 @@ export class CardService {
         catchError(this.handleError<Card>(`getCardById id=${cardId}`))
       );
   }
+  
+  getSetNameWithCode(setcode:string) {
+    return this.http.get<any>(this.setsUrl+`/getName/${setcode}`)
+      .pipe(
+        tap(_ => console.log('fetched name with setcode: ', setcode)),
+        catchError(this.handleError<any>(`getSetNameWithCode setcode=${setcode}`))
+      );
+  }
+
+  getSetInfoWithCode(setcode:string) {
+    return this.http.get<Set>(this.setsUrl+`/setcode/${setcode}`)
+    .pipe(
+      tap(_ => console.log('fetched name with setcode: ', setcode)),
+      catchError(this.handleError<Set>(`getSetNameWithCode setcode=${setcode}`))
+    );
+  }
 
   getCardsBySet(setName:string): Observable<Card[]> {
     return this.http.get<Card[]>(this.cardUrl+`/sets/${setName}`)

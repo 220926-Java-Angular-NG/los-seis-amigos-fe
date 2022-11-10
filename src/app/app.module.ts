@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CardSetWrapperComponent } from './components/card-set-wrapper/card-set-wrapper.component';
+import { SetDisplayCardWrapperComponent } from './components/set-display-card-wrapper/set-display-card-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CardSetWrapperComponent } from './components/card-set-wrapper/card-set-
     CardItemComponent,
     ResetPasswordComponent,
     CheckoutComponent,
-    CardSetWrapperComponent
+    CardSetWrapperComponent,
+    SetDisplayCardWrapperComponent
   ],
   imports: [
     BrowserModule,

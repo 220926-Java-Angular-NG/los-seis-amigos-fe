@@ -10,6 +10,7 @@ import { Card } from '../profile/userInterface';
 export class CardItemComponent implements OnInit {
 
   @Input() card?:cardOwned
+  @Input() unOwnedCard?:Card
 
   constructor() { }
 

@@ -8,6 +8,7 @@ import { ProductWrapperComponent } from './components/product-wrapper/product-wr
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { SetDisplayCardWrapperComponent } from './components/set-display-card-wrapper/set-display-card-wrapper.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'profile', component:ProfileComponent},
   {path:'reset', component:ResetPasswordComponent},
   {path:'checkout', component:CheckoutComponent},
+  {path:'cards/set/:setcode', component:SetDisplayCardWrapperComponent},
   {path:'**', redirectTo:'home',pathMatch:"full"}
   ];
 

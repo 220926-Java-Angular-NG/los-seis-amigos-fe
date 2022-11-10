@@ -15,12 +15,6 @@ export class CardsOwnedService {
     // headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  // TODO: make cardOwned interface
-  // TODO: implement the cardOwned interface here
-  // will return a list of cards (dont really need them)
-  // TODO: implement getUsersCards()
-
-
   public openSet(cartItem:CartItem) {
     return this.http.post<cardOwned[]>(this.cardsOwnedUrl+`/${cartItem.user.id}/${cartItem.set.setcode}`,this.httpOptions)
       .pipe(

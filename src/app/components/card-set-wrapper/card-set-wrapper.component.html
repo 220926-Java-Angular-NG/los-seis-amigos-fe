@@ -1,18 +1,16 @@
-<div class="accordion" id="accordionExample" *ngIf="userSets">
-  <div class="accordion-item" *ngFor="let set of userSets">
-    <h2 class="accordion-header" id="headingOne">
-      <button (click)="getUserCardsOwnedSet(set)" 
+<div class="accordion" id="accordionExample" *ngIf="userSetsWithName">
+  <div class="accordion-item" *ngFor="let set of userSetsWithName">
+    <h2 class="accordion-header" id="headingOne{{set.set}}">
+      <button 
+        (click)="getUserCardsOwnedSet(set.set)" 
+        [ngClass]="{'collapsed': showSet !== set.set}"
         class="accordion-button" 
         type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#collapseOne" 
-        aria-expanded="true" 
-        aria-controls="collapseOne"
       >
-        {{set}}
+        {{set.name}}
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" [hidden]="showSet !== set">
+    <div id="collapseOne{{set.set}}" [ngClass]="{'show': showSet === set.set}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" >
       <div class="accordion-body row bg-light rounded d-flex justify-content-evenly py-4">
         <app-card-item class="col-lg-2 col-md-3 col-5" *ngFor="let card of cardsOwnedSet" [card]="card"></app-card-item>
       </div>

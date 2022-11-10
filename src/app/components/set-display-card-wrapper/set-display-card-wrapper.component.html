@@ -1,0 +1,14 @@
+
+<div class="container mx-auto row">
+  <div class="col-8">
+    <div class="row bg-light rounded d-flex justify-content-evenly py-4" *ngIf="cardsInSet">
+      <app-card-item class="col-lg-2 col-md-3 col-5" *ngFor="let card of cardsInSet" [unOwnedCard]="card"></app-card-item>
+    </div>
+  </div>
+  <div class="col-4">
+    <app-product-listing class="col-12 col-sm-6 col-md-4 col-xl-3 d-flex align-items-stretch" *ngIf="setItem"
+      [set]="setItem"
+    >
+  </app-product-listing>
+  </div>
+</div>
